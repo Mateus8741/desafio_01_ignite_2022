@@ -19,7 +19,7 @@ export const Button = styled.button`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.blue_dark};
   color: ${({ theme }) => theme.colors.white};
-  
   border-radius: 8px;
+  border: none;
   padding: 1rem 1rem;
 `;
