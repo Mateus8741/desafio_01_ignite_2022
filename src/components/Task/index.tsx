@@ -8,7 +8,7 @@ interface Props {
   onDeleteTask: (comment: string) => void;
 }
 
-export function Task({ task, onDeleteTask }: Props, text: string) {
+export function Task({ task, onDeleteTask }: Props) {
   const [isChecked, setIsChecked] = useState(false);
 
   function handleCompleteTask() {
