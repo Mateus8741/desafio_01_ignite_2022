@@ -3,11 +3,14 @@ import { Task } from "../Task";
 
 import * as S from "./styles";
 
+interface Props {
+  content: {
+    id: number;
+    task: string;
+  }[];
+}
 
-
-
-
-export function TasksList({content}: any) {
+export function TasksList({ content }: Props) {
   return (
     <S.Container>
       <S.Info>
@@ -23,19 +26,17 @@ export function TasksList({content}: any) {
       </S.Info>
 
       <S.Content>
-          {/* <>
-          <ClipboardText size={56} color="#333333" />
-          <S.Strong>Você ainda não tem tarefas cadastradas</S.Strong>
-          <S.Span>Crie tarefas e organize seus itens a fazer</S.Span>
-          </> */}
-        
-        
-         <Task task="asdasdasd" />
-         {/* {
-          content.map(item => <Task task={item} />)
-         } */}
-          
-         
+        {content.length === 0 && (
+          <>
+            <ClipboardText size={56} color="#333333" />
+            <S.Strong>Você ainda não tem tarefas cadastradas</S.Strong>
+            <S.Span>Crie tarefas e organize seus itens a fazer</S.Span>
+          </>
+        )}
+
+        {content.map((item) => (
+          <Task key={item.id} task={item.task} />
+        ))}
       </S.Content>
     </S.Container>
   );
