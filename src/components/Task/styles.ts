@@ -67,8 +67,6 @@ export const Text = styled.p<Props>`
   font-family: ${({ theme }) => theme.fonts.inter_400};
   color: ${({ isChecked, theme }) =>
     isChecked ? theme.colors.gray_300 : theme.colors.white};
-  /* text-decoration: ${({ isChecked }) =>
-    isChecked ? "line-through" : "none"}; */
   ${({ isChecked }) =>
     isChecked &&
     css`
