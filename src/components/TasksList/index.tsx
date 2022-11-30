@@ -3,7 +3,11 @@ import { Task } from "../Task";
 
 import * as S from "./styles";
 
-export function TasksList() {
+
+
+
+
+export function TasksList({content}: any) {
   return (
     <S.Container>
       <S.Info>
@@ -19,13 +23,19 @@ export function TasksList() {
       </S.Info>
 
       <S.Content>
-        {/* <ClipboardText size={56} color="#333333" />
-        <S.Strong>Você ainda não tem tarefas cadastradas</S.Strong>
-        <S.Span>Crie tarefas e organize seus itens a fazer</S.Span> */}
-        <Task task="New Task" />
-        <Task task="New Task" />
-        <Task task="New Task" />
-        <Task task="New Task" />
+          {/* <>
+          <ClipboardText size={56} color="#333333" />
+          <S.Strong>Você ainda não tem tarefas cadastradas</S.Strong>
+          <S.Span>Crie tarefas e organize seus itens a fazer</S.Span>
+          </> */}
+        
+        
+         <Task task="asdasdasd" />
+         {/* {
+          content.map(item => <Task task={item} />)
+         } */}
+          
+         
       </S.Content>
     </S.Container>
   );

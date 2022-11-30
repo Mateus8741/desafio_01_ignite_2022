@@ -12,23 +12,17 @@ export function Task({ task }: Props) {
 
   function handleCompleteTask() {
     setIsChecked(true);
-    console.log('checado');
-    
   }
 
   return (
-    <S.Container>
+    <S.Container isChecked={isChecked}>
       <S.Content>
-        <input
-          type="checkbox"
-          onClick={handleCompleteTask}
-          checked={isChecked}
-        />
+        <input type="checkbox" onChange={handleCompleteTask} checked={isChecked}/>
 
         <S.DivText>
-          <S.Text>{task}</S.Text>
+          <S.Text isChecked={isChecked}>{task}</S.Text>
         </S.DivText>
-        <Trash size={24} color="#FFF" />
+        <Trash size={24} color="#FFF" cursor="pointer" />
       </S.Content>
     </S.Container>
   );

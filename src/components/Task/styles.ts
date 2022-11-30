@@ -1,9 +1,15 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const Container = styled.div`
+interface Props {
+  isChecked: boolean;
+}
+
+export const Container = styled.div<Props>`
   width: 100%;
   background-color: ${({ theme }) => theme.colors.gray_500};
   border-radius: 8px;
+  border: ${({ isChecked, theme }) =>
+    isChecked ? "none" : `inset 1px ${theme.colors.gray_300}`};
 
   margin-bottom: 0.75rem;
 
@@ -32,10 +38,10 @@ export const Container = styled.div`
     border: 0;
     background-color: transparent;
     background-size: contain;
-    box-shadow: inset 0 0 0 1px ${({theme})=> theme.colors.blue};
+    box-shadow: inset 0 0 0 1px ${({ theme }) => theme.colors.blue};
   }
   [type="checkbox"]:checked {
-    background-color: ${({theme})=> theme.colors.purple_dark};
+    background-color: ${({ theme }) => theme.colors.purple_dark};
     color: red;
   }
   [type="checkbox"]:checked::before {
@@ -57,9 +63,17 @@ export const DivText = styled.div`
   padding: 0 0.75rem;
 `;
 
-export const Text = styled.p`
-  color: ${({ theme }) => theme.colors.white};
+export const Text = styled.p<Props>`
   font-family: ${({ theme }) => theme.fonts.inter_400};
+  color: ${({ isChecked, theme }) =>
+    isChecked ? theme.colors.gray_300 : theme.colors.white};
+  /* text-decoration: ${({ isChecked }) =>
+    isChecked ? "line-through" : "none"}; */
+  ${({ isChecked }) =>
+    isChecked &&
+    css`
+      text-decoration: line-through;
+    `}
   font-weight: 400;
   font-size: 0.875rem;
   text-align: left;

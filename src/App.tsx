@@ -4,6 +4,21 @@ import { TasksList } from "./components/TasksList";
 
 import "./global-style.css";
 
+const newTask = [
+  {
+    id: 0,
+    task: "Compras",
+  },
+  {
+    id: 1,
+    task: "Jantar",
+  },
+  {
+    id: 2,
+    task: "Água",
+  },
+];
+
 const style2 = {
   display: "flex",
   justifyContent: "center",
@@ -24,7 +39,7 @@ export function App() {
         <NewTask />
       </div>
       <main style={style2}>
-        <TasksList />
+        <TasksList content={newTask} />
       </main>
     </div>
   );
