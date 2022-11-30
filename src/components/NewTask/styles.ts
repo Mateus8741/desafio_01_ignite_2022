@@ -19,6 +19,10 @@ export const Input = styled.input`
   font-family: "Inter", sans-serif;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.white};
+  &:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+  }
 `;
 
 export const Button = styled.button`
@@ -30,4 +34,9 @@ export const Button = styled.button`
   border-radius: 8px;
   border: none;
   padding: 1rem 1rem;
+  cursor: pointer;
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.blue};
+    transition: all 0.5s;
+  }
 `;

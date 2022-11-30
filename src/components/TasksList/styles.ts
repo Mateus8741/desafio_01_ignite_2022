@@ -54,7 +54,7 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4rem 1.5rem;
+  padding: 4rem 0;
   margin-top: 24px;
   border-top: inset 1px ${({ theme }) => theme.colors.gray_300};
   border-radius: 8px;
