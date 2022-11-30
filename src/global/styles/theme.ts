@@ -21,7 +21,6 @@ export default {
     success: "#03B252",
   },
   fonts: {
-    inter_400: "Inter_400Regular",
-    inter_500: "Inter_700Bold", 
+    inter_400: "Inter",
   },
 };
